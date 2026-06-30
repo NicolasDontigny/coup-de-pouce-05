@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { PhoneIcon, EnvelopeSimpleIcon, MapPinIcon, ClockIcon, CheckCircleIcon, PaperPlaneTiltIcon } from '@phosphor-icons/react'
+import CopyableValue from './CopyableValue'
 import './Contact.css'
 
 const serviceOptions = [
@@ -17,12 +18,12 @@ const contactItems = [
   {
     icon: PhoneIcon,
     label: 'Téléphone',
-    content: <a href="tel:+33687234702" className="contact__info-value">06 87 23 47 02</a>,
+    content: <CopyableValue href="tel:+33687234702" display="06 87 23 47 02" />,
   },
   {
     icon: EnvelopeSimpleIcon,
     label: 'Email',
-    content: <a href="mailto:petitcoupdepouce05@gmail.com" className="contact__info-value">petitcoupdepouce05@gmail.com</a>,
+    content: <CopyableValue href="mailto:petitcoupdepouce05@gmail.com" display="petitcoupdepouce05@gmail.com" />,
   },
   {
     icon: MapPinIcon,
@@ -36,20 +37,48 @@ const contactItems = [
   },
 ]
 
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY
+
 export default function Contact() {
   const [form, setForm] = useState({
     nom: '', telephone: '', email: '', service: '', message: '',
   })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
-    const subject = `Demande de devis – ${form.service || 'Site web'}`
-    const body = `Nom : ${form.nom}%0ATéléphone : ${form.telephone}%0AEmail : ${form.email}%0AService : ${form.service}%0A%0AMessage :%0A${form.message}`
-    window.location.href = `mailto:petitcoupdepouce05@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
-    setSent(true)
+    setSending(true)
+    setError(null)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Demande de devis – ${form.service || 'Site web'}`,
+          from_name: form.nom,
+          nom: form.nom,
+          telephone: form.telephone,
+          email: form.email,
+          service: form.service,
+          message: form.message,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSent(true)
+      } else {
+        setError('Une erreur est survenue. Veuillez réessayer.')
+      }
+    } catch {
+      setError('Une erreur est survenue. Veuillez réessayer.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -118,9 +147,10 @@ export default function Contact() {
                   <textarea id="message" name="message" rows={4} placeholder="Décrivez en quelques mots ce que vous souhaitez réaliser..." value={form.message} onChange={handleChange} required />
                 </div>
 
-                <button type="submit" className="btn-primary contact__submit">
+                {error && <p className="contact__error">{error}</p>}
+                <button type="submit" className="btn-primary contact__submit" disabled={sending}>
                   <PaperPlaneTiltIcon size={16} weight="fill" />
-                  Envoyer ma demande
+                  {sending ? 'Envoi en cours…' : 'Envoyer ma demande'}
                 </button>
               </form>
             )}
