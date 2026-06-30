@@ -1,6 +1,9 @@
 .zone {
   padding: 100px 0;
-  background: var(--green-dark);
+  background-color: var(--green-dark);
+  background-image: var(--wood-pattern);
+  background-blend-mode: soft-light;
+  background-size: 800px 600px;
 }
 
 .zone__inner {

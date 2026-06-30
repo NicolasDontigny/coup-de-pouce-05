@@ -1,12 +1,12 @@
 .contact {
   padding: 100px 0;
-  background: var(--white);
+  background: var(--bg-light);
 }
 
 .contact__title {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--primary);
   margin-bottom: 8px;
   letter-spacing: -0.02em;
 }

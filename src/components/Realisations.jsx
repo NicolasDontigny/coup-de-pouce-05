@@ -16,7 +16,7 @@ export default function Realisations() {
         <p className="section-label">Galerie</p>
         <h2 className="realisations__title">Mes réalisations</h2>
         <p className="realisations__subtitle">
-          Quelques chantiers réalisés dans les Hautes-Alpes.
+          Quelques chantiers que j'ai réalisés dans les Hautes-Alpes.
         </p>
 
         <div className="realisations__grid">

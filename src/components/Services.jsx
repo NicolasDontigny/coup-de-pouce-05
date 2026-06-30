@@ -1,70 +1,77 @@
+import { Wrench, Scissors, Tree, PaintBrush, House, Lightning, Chats } from '@phosphor-icons/react'
 import './Services.css'
 
 const services = [
   {
     id: 'petits-travaux',
     title: 'Petits travaux',
-    desc: "Bricolage, fixations, petites réparations du quotidien.",
+    desc: "Intérieur et extérieur — bricolage, fixations, petites réparations du quotidien.",
     img: '/images/service-petits-travaux.jpg',
-    icon: '🔧',
+    Icon: Wrench,
   },
   {
     id: 'tonte',
     title: 'Tonte & débroussaillage',
-    desc: "Entretien de vos extérieurs, pelouses, haies et espaces verts.",
+    desc: "Entretien de vos extérieurs, pelouses, talus et espaces verts.",
     img: '/images/service-tonte.jpg',
-    icon: '🌿',
+    Icon: Scissors,
   },
   {
     id: 'coupe-bois',
     title: 'Coupe & bois',
-    desc: "Coupe de bois, sciage et rangement de votre stock de bûches.",
+    desc: "Coupe, fendage et rangement de bois de chauffage.",
     img: '/images/service-bois.jpg',
-    icon: '🪵',
+    Icon: Tree,
   },
   {
     id: 'peinture',
     title: 'Peinture',
     desc: "Peinture intérieure et extérieure, finitions soignées.",
     img: '/images/service-peinture.jpg',
-    icon: '🖌️',
+    Icon: PaintBrush,
   },
   {
     id: 'amenagement',
     title: 'Aménagement intérieur',
     desc: "Construction de rangements, montage, petites rénovations.",
     img: '/images/service-amenagement.jpg',
-    icon: '🏠',
+    Icon: House,
   },
   {
     id: 'depannage',
     title: 'Dépannage',
-    desc: "Intervention rapide pour toute panne ou urgence, organisée et rapide.",
+    desc: "Intervention rapide pour toute panne ou urgence.",
     img: '/images/service-depannage.jpg',
-    icon: '⚡',
+    Icon: Lightning,
   },
   {
     id: 'conseils',
     title: 'Conseils',
     desc: "Accompagnement pour vos projets de travaux et d'aménagement.",
     img: '/images/service-conseils.jpg',
-    icon: '💡',
+    Icon: Chats,
   },
 ]
 
-function ServiceCard({ service }) {
+function ServiceCard({ service, isLast }) {
+  const { Icon } = service
   return (
-    <div className="service-card">
-      <div className="service-card__img">
-        <img
-          src={service.img}
-          alt={service.title}
-          onError={e => {
-            e.target.parentElement.classList.add('service-card__img--placeholder')
-            e.target.style.display = 'none'
-          }}
-        />
-        <span className="service-card__icon">{service.icon}</span>
+    <div className={`service-card${isLast ? ' service-card--last' : ''}`}>
+      {/* Wrapper relatif pour que l'icône déborde sans être clippée */}
+      <div className="service-card__img-wrap">
+        <div className="service-card__img">
+          <img
+            src={service.img}
+            alt={service.title}
+            onError={e => {
+              e.target.parentElement.classList.add('service-card__img--placeholder')
+              e.target.style.display = 'none'
+            }}
+          />
+        </div>
+        <span className="service-card__icon">
+          <Icon size={20} weight="fill" color="white" />
+        </span>
       </div>
       <div className="service-card__body">
         <h3 className="service-card__title">{service.title}</h3>
@@ -86,14 +93,14 @@ export default function Services() {
               Du petit bricolage à la rénovation complète, j'interviens pour tous vos besoins.
             </p>
           </div>
-          <a href="#contact" className="btn-primary services__cta">
+          <a href="#contact" className="btn-primary btn-primary--green services__cta">
             Demander un devis
           </a>
         </div>
 
         <div className="services__grid">
-          {services.map(s => (
-            <ServiceCard key={s.id} service={s} />
+          {services.map((s, i) => (
+            <ServiceCard key={s.id} service={s} isLast={i === services.length - 1} />
           ))}
         </div>
       </div>

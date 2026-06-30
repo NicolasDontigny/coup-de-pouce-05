@@ -1,28 +1,28 @@
 .apropos {
   padding: 100px 0;
-  background: var(--white);
+  background: var(--bg-light);
 }
 
 .apropos__inner {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 80px;
-  align-items: center;
+  grid-template-columns: auto auto 1fr;
+  gap: 0 40px;
 }
 
+/* Photo */
 .apropos__photo-wrap {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .apropos__photo-circle {
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--cream-dark);
-  border: 6px solid var(--cream);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
 .apropos__photo-circle img {
@@ -39,32 +39,33 @@
   font-size: 4rem;
 }
 
-.apropos__badges {
+/* Colonne du badge */
+.apropos__badge-col {
+  padding: 32px;
+  align-self: flex-start;
   display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  justify-content: center;
 }
 
-.apropos__badge {
-  padding: 4px 12px;
-  border-radius: 50px;
+.apropos__badge-float {
+  background: var(--primary);
+  color: var(--white);
   font-size: 0.75rem;
   font-weight: 700;
+  padding: 8px 36px;
+  border-radius: 50px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.apropos__badge--gold {
-  background: rgba(184, 147, 90, 0.15);
-  color: var(--gold);
-  border: 1px solid rgba(184, 147, 90, 0.3);
-}
-
+/* Contenu */
 .apropos__title {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--primary);
   margin-bottom: 20px;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .apropos__text {
@@ -74,35 +75,47 @@
   margin-bottom: 16px;
 }
 
+/* Grille 2×2 des qualités */
 .apropos__qualities {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 12px 32px;
   margin-top: 28px;
 }
 
 .apropos__quality {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-dark);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.apropos__quality-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #d4dad0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
   .apropos__inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 24px;
     text-align: center;
   }
 
   .apropos__photo-circle {
-    width: 240px;
-    height: 240px;
+    width: 260px;
+    height: 260px;
   }
 
-  .apropos__badges {
+  .apropos__badge-col {
     justify-content: center;
   }
 

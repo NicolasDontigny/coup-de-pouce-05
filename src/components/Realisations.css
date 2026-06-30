@@ -1,18 +1,29 @@
 .realisations {
   padding: 100px 0;
-  background: var(--cream);
+  background-color: var(--primary);
+  background-image: var(--wood-pattern);
+  background-blend-mode: soft-light;
+  background-size: 800px 600px;
+}
+
+.realisations .section-label {
+  color: var(--secondary);
+}
+
+.realisations .section-label::before {
+  background: var(--secondary);
 }
 
 .realisations__title {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--white);
   margin-bottom: 8px;
   letter-spacing: -0.02em;
 }
 
 .realisations__subtitle {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.95rem;
   margin-bottom: 48px;
 }

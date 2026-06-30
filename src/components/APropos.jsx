@@ -1,9 +1,9 @@
-import { CheckCircle } from '@phosphor-icons/react'
+import { Check } from '@phosphor-icons/react'
 import './APropos.css'
 
 const qualities = [
-  'Fiabilité',
-  'Honnêteté',
+  'Réactivité',
+  'Proximité',
   'Travail soigné',
   'Tarifs clairs',
 ]
@@ -25,32 +25,36 @@ export default function APropos() {
           </div>
         </div>
 
-        <div className="apropos__content">
-          <div className="apropos__badges">
-            <span className="apropos__badge apropos__badge--gold">Artisan local</span>
+        <div className="apropos__badge-col">
+          <div className="apropos__badge-float">
+            Artisan local · 05
           </div>
+        </div>
 
-          <p className="section-label">À propos de moi</p>
+        <div className="apropos__content">
+          <p className="section-label">Qui suis-je ?</p>
 
           <h2 className="apropos__title">
             Benoît Sappe,<br />à votre service
           </h2>
 
           <p className="apropos__text">
-            J'interviens dans les Hautes-Alpes depuis plusieurs années pour les particuliers
-            et professionnels de la région. Disponible pour le travail manuel et les petits
-            chantiers, j'apporte soin et sérieux à chaque chantier.
+            Installé dans les Hautes-Alpes, j'interviens depuis plusieurs années pour les
+            particuliers et professionnels de la région. Passionné par le travail manuel
+            et le contact humain, j'apporte soin et rigueur à chaque chantier.
           </p>
 
           <p className="apropos__text">
-            Vous avez un projet ? Je vous donne un coup de pouce, sans prise de tête, avec un
-            résultat bien fait et un tarif honnête.
+            Mon objectif : vous offrir un vrai coup de pouce, sans prise de tête, avec
+            un travail bien fait et un tarif honnête.
           </p>
 
           <div className="apropos__qualities">
             {qualities.map(q => (
               <div key={q} className="apropos__quality">
-                <CheckCircle size={16} weight="fill" color="var(--green-dark)" />
+                <span className="apropos__quality-icon">
+                  <Check size={13} weight="bold" color="var(--primary)" />
+                </span>
                 <span>{q}</span>
               </div>
             ))}
