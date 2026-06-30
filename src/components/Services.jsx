@@ -1,4 +1,9 @@
 import { WrenchIcon, ScissorsIcon, TreeIcon, PaintBrushIcon, HouseIcon, LightningIcon, ChatsIcon } from '@phosphor-icons/react'
+import imgCabanon from '../assets/Cabanon.jpg'
+import imgCoupe from '../assets/coupe.webp'
+import imgHache from '../assets/hache.jpg'
+import imgPeinture from '../assets/Peinture_2.jpg'
+import imgBibliotheque from '../assets/bibliotheque.webp'
 import './Services.css'
 
 const services = [
@@ -6,35 +11,35 @@ const services = [
     id: 'petits-travaux',
     title: 'Petits travaux',
     desc: "Intérieur et extérieur — bricolage, fixations, petites réparations du quotidien.",
-    img: '/images/service-petits-travaux.jpg',
+    img: imgCabanon,
     Icon: WrenchIcon,
   },
   {
     id: 'tonte',
     title: 'Tonte & débroussaillage',
-    desc: "Entretien de vos extérieurs, pelouses, talus et espaces verts.",
-    img: '/images/service-tonte.jpg',
+    desc: "Entretien de vos extérieurs, pelouses, talus et espaces verts. Matériel professionnel sur batterie — silencieux et propre.",
+    img: imgCoupe,
     Icon: ScissorsIcon,
   },
   {
     id: 'coupe-bois',
     title: 'Coupe & bois',
     desc: "Coupe, fendage et rangement de bois de chauffage.",
-    img: '/images/service-bois.jpg',
+    img: imgHache,
     Icon: TreeIcon,
   },
   {
     id: 'peinture',
     title: 'Peinture',
     desc: "Peinture intérieure et extérieure, finitions soignées.",
-    img: '/images/service-peinture.jpg',
+    img: imgPeinture,
     Icon: PaintBrushIcon,
   },
   {
     id: 'amenagement',
     title: 'Aménagement intérieur',
     desc: "Construction de rangements, montage, petites rénovations.",
-    img: '/images/service-amenagement.jpg',
+    img: imgBibliotheque,
     Icon: HouseIcon,
   },
   {
@@ -63,6 +68,8 @@ function ServiceCard({ service, isLast }) {
           <img
             src={service.img}
             alt={service.title}
+            loading="lazy"
+            decoding="async"
             onError={e => {
               e.target.parentElement.classList.add('service-card__img--placeholder')
               e.target.style.display = 'none'

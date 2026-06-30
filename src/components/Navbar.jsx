@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { ListIcon, XIcon } from '@phosphor-icons/react'
 import PhoneButton from './PhoneButton'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.jpg'
 import './Navbar.css'
 
 const navLinks = [

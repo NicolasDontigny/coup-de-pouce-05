@@ -1,4 +1,5 @@
 import { CheckIcon } from '@phosphor-icons/react'
+import benoitPhoto from '../assets/att.k6MAV-1JtAZj3Y8Fbr6GnpOJ6am13otY_GG-tLcliWo (1).jpg'
 import './APropos.css'
 
 const qualities = [
@@ -6,6 +7,7 @@ const qualities = [
   'Proximité',
   'Travail soigné',
   'Tarifs clairs',
+  'Matériel professionnel sur batterie (silencieux)',
 ]
 
 export default function APropos() {
@@ -15,7 +17,7 @@ export default function APropos() {
         <div className="apropos__photo-wrap">
           <div className="apropos__photo-circle">
             <img
-              src="/images/benoit.jpg"
+              src={benoitPhoto}
               alt="Benoît Sappe"
               onError={e => {
                 e.target.parentElement.classList.add('apropos__photo-circle--placeholder')

@@ -1,13 +1,21 @@
 import GrainOverlay from './GrainOverlay'
+import imgCuisine from '../assets/Cuisine.jpg'
+import imgChambre from '../assets/Chambre.jpg'
+import imgParquet from '../assets/Parquet.jpg'
+import imgLasure from '../assets/Lasure.jpg'
+import imgPeinture from '../assets/Peinture.jpg'
+import imgCabanon from '../assets/Cabanon.jpg'
+import imgBibliotheque from '../assets/bibliotheque.webp'
 import './Realisations.css'
 
 const photos = [
-  { src: '/images/real-1.jpg', alt: 'Réalisation cuisine rénovée' },
-  { src: '/images/real-2.jpg', alt: 'Réalisation travaux bois' },
-  { src: '/images/real-3.jpg', alt: 'Réalisation aménagement intérieur' },
-  { src: '/images/real-4.jpg', alt: 'Réalisation peinture' },
-  { src: '/images/real-5.jpg', alt: 'Réalisation rénovation' },
-  { src: '/images/real-6.jpg', alt: 'Réalisation finitions' },
+  { src: imgCuisine, alt: 'Réalisation cuisine rénovée' },
+  { src: imgChambre, alt: 'Réalisation aménagement intérieur' },
+  { src: imgParquet, alt: 'Réalisation parquet' },
+  { src: imgLasure, alt: 'Réalisation lasure et finitions' },
+  { src: imgPeinture, alt: 'Réalisation peinture' },
+  { src: imgCabanon, alt: 'Réalisation abri de jardin' },
+  { src: imgBibliotheque, alt: 'Réalisation bibliothèque sur mesure' },
 ]
 
 export default function Realisations() {
@@ -30,6 +38,8 @@ export default function Realisations() {
               <img
                 src={photo.src}
                 alt={photo.alt}
+                loading="lazy"
+                decoding="async"
                 onError={e => {
                   e.target.parentElement.classList.add('realisations__item--placeholder')
                   e.target.style.display = 'none'
