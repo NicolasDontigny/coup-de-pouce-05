@@ -1,12 +1,9 @@
 import logo from '../assets/logo.png'
-import GrainOverlay from './GrainOverlay'
 import './Footer.css'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Réalisations', href: '#realisations' },
-  { label: 'À propos', href: '#apropos' },
-  { label: 'Zone', href: '#zone' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -15,13 +12,13 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <GrainOverlay variant="footer" />
       <div className="container footer__inner">
-        <div className="footer__brand">
+        <div>
           <img src={logo} alt="Petit coup de pouce 05" className="footer__logo" />
-          <p className="footer__tagline">
-            Votre artisan multi-services dans les Hautes-Alpes.
-          </p>
+        </div>
+
+        <div>
+          <span className="footer__tagline">Multi-services · Hautes-Alpes</span>
         </div>
 
         <nav className="footer__nav">
@@ -32,20 +29,7 @@ export default function Footer() {
           ))}
         </nav>
 
-        <div className="footer__contact">
-          <a href="tel:+33687234702" className="footer__phone">
-            📞 06 87 23 47 02
-          </a>
-          <a href="mailto:petitcoupdepouce05@gmail.com" className="footer__email">
-            petitcoupdepouce05@gmail.com
-          </a>
-        </div>
-      </div>
-
-      <div className="footer__bottom">
-        <div className="container">
-          © {year} Benoît Sappe – Petit coup de pouce 05. Tous droits réservés.
-        </div>
+        <p className="footer__copy">© {year} Petit coup de pouce 05</p>
       </div>
     </footer>
   )
