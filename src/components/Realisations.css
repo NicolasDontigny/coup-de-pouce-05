@@ -1,9 +1,8 @@
 .realisations {
   padding: 100px 0;
-  background-color: var(--primary);
-  background-image: var(--wood-pattern);
-  background-blend-mode: soft-light;
-  background-size: 800px 600px;
+  background: var(--primary);
+  position: relative;
+  overflow: hidden;
 }
 
 .realisations .section-label {

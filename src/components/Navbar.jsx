@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Phone, List, X } from '@phosphor-icons/react'
+import { PhoneIcon, ListIcon, XIcon } from '@phosphor-icons/react'
 import logo from '../assets/logo.png'
 import './Navbar.css'
 
@@ -42,7 +42,7 @@ export default function Navbar() {
         </nav>
 
         <a href="tel:+33687234702" className="btn-primary navbar__cta">
-          <Phone size={15} weight="fill" />
+          <PhoneIcon size={15} weight="fill" />
           06 87 23 47 02
         </a>
 
@@ -51,7 +51,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(o => !o)}
           aria-label="Menu"
         >
-          {menuOpen ? <X size={22} color="white" weight="bold" /> : <List size={22} color="white" weight="bold" />}
+          {menuOpen ? <XIcon size={22} color="white" weight="bold" /> : <ListIcon size={22} color="white" weight="bold" />}
         </button>
       </div>
     </header>

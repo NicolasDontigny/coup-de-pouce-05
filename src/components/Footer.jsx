@@ -1,4 +1,5 @@
 import logo from '../assets/logo.png'
+import GrainOverlay from './GrainOverlay'
 import './Footer.css'
 
 const navLinks = [
@@ -14,6 +15,7 @@ export default function Footer() {
 
   return (
     <footer className="footer">
+      <GrainOverlay variant="footer" />
       <div className="container footer__inner">
         <div className="footer__brand">
           <img src={logo} alt="Petit coup de pouce 05" className="footer__logo" />

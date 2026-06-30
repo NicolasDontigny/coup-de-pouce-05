@@ -1,4 +1,4 @@
-import { Wrench, Scissors, Tree, PaintBrush, House, Lightning, Chats } from '@phosphor-icons/react'
+import { WrenchIcon, ScissorsIcon, TreeIcon, PaintBrushIcon, HouseIcon, LightningIcon, ChatsIcon } from '@phosphor-icons/react'
 import './Services.css'
 
 const services = [
@@ -7,49 +7,49 @@ const services = [
     title: 'Petits travaux',
     desc: "Intérieur et extérieur — bricolage, fixations, petites réparations du quotidien.",
     img: '/images/service-petits-travaux.jpg',
-    Icon: Wrench,
+    Icon: WrenchIcon,
   },
   {
     id: 'tonte',
     title: 'Tonte & débroussaillage',
     desc: "Entretien de vos extérieurs, pelouses, talus et espaces verts.",
     img: '/images/service-tonte.jpg',
-    Icon: Scissors,
+    Icon: ScissorsIcon,
   },
   {
     id: 'coupe-bois',
     title: 'Coupe & bois',
     desc: "Coupe, fendage et rangement de bois de chauffage.",
     img: '/images/service-bois.jpg',
-    Icon: Tree,
+    Icon: TreeIcon,
   },
   {
     id: 'peinture',
     title: 'Peinture',
     desc: "Peinture intérieure et extérieure, finitions soignées.",
     img: '/images/service-peinture.jpg',
-    Icon: PaintBrush,
+    Icon: PaintBrushIcon,
   },
   {
     id: 'amenagement',
     title: 'Aménagement intérieur',
     desc: "Construction de rangements, montage, petites rénovations.",
     img: '/images/service-amenagement.jpg',
-    Icon: House,
+    Icon: HouseIcon,
   },
   {
     id: 'depannage',
     title: 'Dépannage',
     desc: "Intervention rapide pour toute panne ou urgence.",
     img: '/images/service-depannage.jpg',
-    Icon: Lightning,
+    Icon: LightningIcon,
   },
   {
     id: 'conseils',
     title: 'Conseils',
     desc: "Accompagnement pour vos projets de travaux et d'aménagement.",
     img: '/images/service-conseils.jpg',
-    Icon: Chats,
+    Icon: ChatsIcon,
   },
 ]
 

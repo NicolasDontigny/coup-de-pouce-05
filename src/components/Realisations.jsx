@@ -1,3 +1,4 @@
+import GrainOverlay from './GrainOverlay'
 import './Realisations.css'
 
 const photos = [
@@ -12,6 +13,7 @@ const photos = [
 export default function Realisations() {
   return (
     <section id="realisations" className="realisations">
+      <GrainOverlay variant="realisations" />
       <div className="container">
         <p className="section-label">Galerie</p>
         <h2 className="realisations__title">Mes réalisations</h2>

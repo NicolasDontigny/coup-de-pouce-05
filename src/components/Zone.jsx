@@ -1,3 +1,4 @@
+import GrainOverlay from './GrainOverlay'
 import './Zone.css'
 
 const communes = [
@@ -11,27 +12,23 @@ const communes = [
 export default function Zone() {
   return (
     <section id="zone" className="zone">
+      <GrainOverlay variant="zone" />
       <div className="container zone__inner">
         <div className="zone__content">
           <p className="section-label zone__label">Déplacements</p>
           <h2 className="zone__title">Zone d'intervention</h2>
           <p className="zone__text">
-            J'interviens principalement dans les Hautes-Alpes (05) et les communes alentour.
+            J'interviens principalement dans les Hautes-Alpes et les communes environnantes.
           </p>
 
           <ul className="zone__list">
             {communes.map(c => (
               <li key={c} className="zone__list-item">
-                <span className="zone__list-marker">📍</span>
+                <span className="zone__list-marker" />
                 {c}
               </li>
             ))}
           </ul>
-
-          <p className="zone__note">
-            Une question sur ma zone de déplacement ?{' '}
-            <a href="tel:+33687234702" className="zone__link">Appelez-moi directement.</a>
-          </p>
         </div>
 
         <div className="zone__map">

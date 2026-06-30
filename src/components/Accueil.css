@@ -1,8 +1,5 @@
 .hero {
-  background-color: var(--green-dark);
-  background-image: var(--wood-pattern);
-  background-blend-mode: soft-light;
-  background-size: 800px 600px;
+  background: var(--green-dark);
   min-height: 100vh;
   display: flex;
   align-items: center;

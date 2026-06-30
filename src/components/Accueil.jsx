@@ -1,9 +1,11 @@
-import { Phone, CaretRight, MapPin } from '@phosphor-icons/react'
+import { PhoneIcon, CaretRightIcon, MapPinIcon } from '@phosphor-icons/react'
+import GrainOverlay from './GrainOverlay'
 import './Accueil.css'
 
 export default function Accueil() {
   return (
     <section id="hero" className="hero">
+      <GrainOverlay variant="accueil" />
       <div className="container hero__inner">
         <div className="hero__content">
           <div className="hero__tag">
@@ -24,12 +26,12 @@ export default function Accueil() {
 
           <div className="hero__actions">
             <a href="tel:+33687234702" className="btn-primary">
-              <Phone size={16} weight="fill" />
+              <PhoneIcon size={16} weight="fill" />
               Appeler maintenant
             </a>
             <a href="#services" className="btn-outline-white">
               Voir les services
-              <CaretRight size={16} weight="fill" />
+              <CaretRightIcon size={16} weight="fill" />
             </a>
           </div>
 
@@ -61,7 +63,7 @@ export default function Accueil() {
           </div>
           <div className="hero__location-badge">
             <span className="hero__location-icon">
-              <MapPin size={18} weight="fill" color="white" />
+              <MapPinIcon size={18} weight="fill" color="white" />
             </span>
             <div>
               <div className="hero__location-name">Hautes-Alpes · 05</div>

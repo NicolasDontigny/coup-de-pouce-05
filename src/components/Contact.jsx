@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Phone, EnvelopeSimple, MapPin, Clock, CheckCircle } from '@phosphor-icons/react'
+import { PhoneIcon, EnvelopeSimpleIcon, MapPinIcon, ClockIcon, CheckCircleIcon, PaperPlaneTiltIcon } from '@phosphor-icons/react'
 import './Contact.css'
 
 const serviceOptions = [
@@ -15,22 +15,22 @@ const serviceOptions = [
 
 const contactItems = [
   {
-    icon: Phone,
+    icon: PhoneIcon,
     label: 'Téléphone',
     content: <a href="tel:+33687234702" className="contact__info-value">06 87 23 47 02</a>,
   },
   {
-    icon: EnvelopeSimple,
+    icon: EnvelopeSimpleIcon,
     label: 'Email',
     content: <a href="mailto:petitcoupdepouce05@gmail.com" className="contact__info-value">petitcoupdepouce05@gmail.com</a>,
   },
   {
-    icon: MapPin,
+    icon: MapPinIcon,
     label: 'Adresse',
     content: <div className="contact__info-value">3850 Rte de Saint-Nicolas<br />05260 Saint-Jean-Saint-Nicolas</div>,
   },
   {
-    icon: Clock,
+    icon: ClockIcon,
     label: 'Horaires',
     content: <div className="contact__info-value">Lun – Sam : 7h00 – 19h00</div>,
   },
@@ -38,7 +38,7 @@ const contactItems = [
 
 export default function Contact() {
   const [form, setForm] = useState({
-    nom: '', prenom: '', email: '', service: '', message: '',
+    nom: '', telephone: '', email: '', service: '', message: '',
   })
   const [sent, setSent] = useState(false)
 
@@ -47,7 +47,7 @@ export default function Contact() {
   const handleSubmit = e => {
     e.preventDefault()
     const subject = `Demande de devis – ${form.service || 'Site web'}`
-    const body = `Nom : ${form.prenom} ${form.nom}%0AEmail : ${form.email}%0AService : ${form.service}%0A%0AMessage :%0A${form.message}`
+    const body = `Nom : ${form.nom}%0ATéléphone : ${form.telephone}%0AEmail : ${form.email}%0AService : ${form.service}%0A%0AMessage :%0A${form.message}`
     window.location.href = `mailto:petitcoupdepouce05@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
     setSent(true)
   }
@@ -55,10 +55,10 @@ export default function Contact() {
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <p className="section-label">Nos coordonnées</p>
+        <p className="section-label">Me contacter</p>
         <h2 className="contact__title">Parlons de votre projet</h2>
         <p className="contact__subtitle">
-          Une question, une urgence ? Contactez-moi directement.
+          Un devis, une question, une urgence ? Je vous réponds sous 24h.
         </p>
 
         <div className="contact__inner">
@@ -66,7 +66,7 @@ export default function Contact() {
             {contactItems.map(({ icon: Icon, label, content }) => (
               <div key={label} className="contact__info-item">
                 <div className="contact__info-icon">
-                  <Icon size={18} weight="fill" />
+                  <Icon size={18} weight="fill" color="white" />
                 </div>
                 <div>
                   <div className="contact__info-label">{label}</div>
@@ -79,12 +79,12 @@ export default function Contact() {
           <div className="contact__form-wrap">
             <h3 className="contact__form-title">Demande de devis</h3>
             <p className="contact__form-subtitle">
-              Décrivez votre projet, je vous rappelle rapidement.
+              Décrivez votre projet, je vous réponds rapidement.
             </p>
 
             {sent ? (
               <div className="contact__success">
-                <CheckCircle size={20} weight="fill" />
+                <CheckCircleIcon size={20} weight="fill" />
                 Merci ! Votre messagerie va s'ouvrir. À très vite !
               </div>
             ) : (
@@ -95,30 +95,31 @@ export default function Contact() {
                     <input id="nom" name="nom" type="text" placeholder="Votre nom" value={form.nom} onChange={handleChange} required />
                   </div>
                   <div className="contact__field">
-                    <label htmlFor="prenom">Prénom</label>
-                    <input id="prenom" name="prenom" type="text" placeholder="Votre prénom" value={form.prenom} onChange={handleChange} required />
+                    <label htmlFor="telephone">Téléphone</label>
+                    <input id="telephone" name="telephone" type="tel" placeholder="06 xx xx xx xx" value={form.telephone} onChange={handleChange} />
                   </div>
                 </div>
 
                 <div className="contact__field">
                   <label htmlFor="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="votre@email.com" value={form.email} onChange={handleChange} required />
+                  <input id="email" name="email" type="email" placeholder="vous@email.com" value={form.email} onChange={handleChange} required />
                 </div>
 
                 <div className="contact__field">
                   <label htmlFor="service">Service souhaité</label>
                   <select id="service" name="service" value={form.service} onChange={handleChange} required>
-                    <option value="" disabled>Sélectionnez...</option>
+                    <option value="" disabled>Sélectionner...</option>
                     {serviceOptions.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
 
                 <div className="contact__field">
-                  <label htmlFor="message">Décrivez votre projet</label>
-                  <textarea id="message" name="message" rows={4} placeholder="Quelques mots sur les travaux que vous souhaitez faire..." value={form.message} onChange={handleChange} required />
+                  <label htmlFor="message">Votre projet</label>
+                  <textarea id="message" name="message" rows={4} placeholder="Décrivez en quelques mots ce que vous souhaitez réaliser..." value={form.message} onChange={handleChange} required />
                 </div>
 
                 <button type="submit" className="btn-primary contact__submit">
+                  <PaperPlaneTiltIcon size={16} weight="fill" />
                   Envoyer ma demande
                 </button>
               </form>

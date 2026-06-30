@@ -1,4 +1,4 @@
-import { Check } from '@phosphor-icons/react'
+import { CheckIcon } from '@phosphor-icons/react'
 import './APropos.css'
 
 const qualities = [
@@ -53,7 +53,7 @@ export default function APropos() {
             {qualities.map(q => (
               <div key={q} className="apropos__quality">
                 <span className="apropos__quality-icon">
-                  <Check size={13} weight="bold" color="var(--primary)" />
+                  <CheckIcon size={13} weight="bold" color="var(--primary)" />
                 </span>
                 <span>{q}</span>
               </div>

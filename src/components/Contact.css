@@ -39,12 +39,11 @@
 .contact__info-icon {
   width: 44px;
   height: 44px;
-  background: var(--cream);
+  background: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
   flex-shrink: 0;
 }
 
@@ -53,14 +52,14 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--gold);
   margin-bottom: 4px;
 }
 
 .contact__info-value {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--primary);
   line-height: 1.5;
 }
 
@@ -69,7 +68,7 @@ a.contact__info-value:hover {
 }
 
 .contact__form-wrap {
-  background: var(--cream);
+  background: var(--green-dark);
   border-radius: var(--border-radius-lg);
   padding: 36px 40px;
 }
@@ -77,13 +76,13 @@ a.contact__info-value:hover {
 .contact__form-title {
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: white;
   margin-bottom: 6px;
 }
 
 .contact__form-subtitle {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 28px;
 }
 
@@ -108,21 +107,33 @@ a.contact__info-value:hover {
 .contact__field label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .contact__field input,
 .contact__field select,
 .contact__field textarea {
   padding: 11px 14px;
-  border: 1.5px solid var(--cream-dark);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   font-family: inherit;
   font-size: 0.875rem;
-  color: var(--text-dark);
-  background: var(--white);
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
   transition: border-color 0.2s;
   outline: none;
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.contact__field select option {
+  background: var(--green-dark);
+  color: white;
 }
 
 .contact__field input:focus,
@@ -149,10 +160,14 @@ a.contact__info-value:hover {
   background: rgba(34, 197, 94, 0.1);
   border: 1px solid rgba(34, 197, 94, 0.3);
   border-radius: 10px;
-  color: #166534;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
   font-size: 0.95rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 @media (max-width: 900px) {
