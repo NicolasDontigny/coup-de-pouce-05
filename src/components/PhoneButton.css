@@ -1,0 +1,69 @@
+.phone-btn-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.phone-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  text-align: center;
+  z-index: 100;
+}
+
+.phone-popover::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  rotate: 45deg;
+  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.phone-popover__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.phone-popover__number {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 12px;
+}
+
+.phone-popover__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  background: none;
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.phone-popover__copy:hover {
+  background: var(--gold);
+  color: white;
+}

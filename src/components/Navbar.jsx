@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { PhoneIcon, ListIcon, XIcon } from '@phosphor-icons/react'
+import { ListIcon, XIcon } from '@phosphor-icons/react'
+import PhoneButton from './PhoneButton'
 import logo from '../assets/logo.png'
 import './Navbar.css'
 
@@ -41,10 +42,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="tel:+33687234702" className="btn-primary navbar__cta">
-          <PhoneIcon size={15} weight="fill" />
-          06 87 23 47 02
-        </a>
+        <PhoneButton className="btn-primary navbar__cta" label="06 87 23 47 02" />
 
         <button
           className="navbar__burger"

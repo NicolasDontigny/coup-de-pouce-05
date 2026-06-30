@@ -1,0 +1,73 @@
+.copyable-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.copyable-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.copyable-trigger:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.copyable-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.copyable-popover::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 16px;
+  width: 10px;
+  height: 10px;
+  background: white;
+  rotate: 45deg;
+  box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.copyable-popover__value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.copyable-popover__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+  background: none;
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.copyable-popover__copy:hover {
+  background: var(--gold);
+  color: white;
+}

@@ -1,5 +1,6 @@
-import { PhoneIcon, CaretRightIcon, MapPinIcon } from '@phosphor-icons/react'
+import { CaretRightIcon, MapPinIcon } from '@phosphor-icons/react'
 import GrainOverlay from './GrainOverlay'
+import PhoneButton from './PhoneButton'
 import './Accueil.css'
 
 export default function Accueil() {
@@ -25,10 +26,7 @@ export default function Accueil() {
           </p>
 
           <div className="hero__actions">
-            <a href="tel:+33687234702" className="btn-primary">
-              <PhoneIcon size={16} weight="fill" />
-              Appeler maintenant
-            </a>
+            <PhoneButton />
             <a href="#services" className="btn-outline-white">
               Voir les services
               <CaretRightIcon size={16} weight="fill" />
