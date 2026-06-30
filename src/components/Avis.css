@@ -1,0 +1,125 @@
+.avis {
+  padding: 100px 0;
+  background: var(--cream);
+}
+
+.avis__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.avis__title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+}
+
+.avis__note-globale {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  border-radius: 16px;
+  padding: 20px 28px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  width: fit-content;
+}
+
+.avis__score {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.avis__count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: block;
+}
+
+.avis__google-logo {
+  height: 22px;
+  opacity: 0.85;
+  margin-left: 8px;
+}
+
+.avis__grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Carte */
+.avis-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.avis-card__top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avis-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avis-card__nom {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.avis-card__date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.avis-card__etoiles {
+  display: flex;
+  gap: 2px;
+}
+
+.avis-card__texte {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .avis__note-globale {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .avis__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
