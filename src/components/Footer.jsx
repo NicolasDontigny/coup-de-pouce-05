@@ -13,11 +13,8 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <div>
+        <div className="footer__brand">
           <img src={logo} alt="Petit coup de pouce 05" className="footer__logo" />
-        </div>
-
-        <div>
           <span className="footer__tagline">Multi-services · Hautes-Alpes</span>
         </div>
 
