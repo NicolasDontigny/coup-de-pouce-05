@@ -54,21 +54,28 @@ export default function Contact() {
     setSending(true)
     setError(null)
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: `Demande de devis – ${form.service || 'Site web'}`,
-          from_name: form.nom,
-          nom: form.nom,
-          telephone: form.telephone,
-          email: form.email,
-          service: form.service,
-          message: form.message,
-        }),
-      })
-      const data = await res.json()
+      let data
+      if (import.meta.env.DEV) {
+        await new Promise(r => setTimeout(r, 800))
+        console.log('[DEV] Formulaire soumis (aucun mail envoyé) :', form)
+        data = { success: true }
+      } else {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: `Demande de devis – ${form.service || 'Site web'}`,
+            from_name: form.nom,
+            nom: form.nom,
+            telephone: form.telephone,
+            email: form.email,
+            service: form.service,
+            message: form.message,
+          }),
+        })
+        data = await res.json()
+      }
       if (data.success) {
         setSent(true)
       } else {
@@ -113,8 +120,11 @@ export default function Contact() {
 
             {sent ? (
               <div className="contact__success">
-                <CheckCircleIcon size={20} weight="fill" />
-                Merci ! Votre messagerie va s'ouvrir. À très vite !
+                <CheckCircleIcon size={32} weight="fill" />
+                <div>
+                  <p className="contact__success-title">Demande envoyée !</p>
+                  <p className="contact__success-sub">Merci, je vous réponds dans les plus brefs délais.</p>
+                </div>
               </div>
             ) : (
               <form className="contact__form" onSubmit={handleSubmit}>
