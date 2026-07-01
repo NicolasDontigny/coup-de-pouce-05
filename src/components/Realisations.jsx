@@ -11,11 +11,11 @@ import './Realisations.css'
 const photos = [
   { src: imgCuisine, alt: 'Réalisation cuisine rénovée' },
   { src: imgChambre, alt: 'Réalisation aménagement intérieur' },
-  { src: imgParquet, alt: 'Réalisation parquet' },
+  { src: imgBibliotheque, alt: 'Réalisation bibliothèque sur mesure' },
   { src: imgLasure, alt: 'Réalisation lasure et finitions' },
   { src: imgPeinture, alt: 'Réalisation peinture' },
   { src: imgCabanon, alt: 'Réalisation abri de jardin' },
-  { src: imgBibliotheque, alt: 'Réalisation bibliothèque sur mesure' },
+  { src: imgParquet, alt: 'Réalisation parquet' },
 ]
 
 export default function Realisations() {

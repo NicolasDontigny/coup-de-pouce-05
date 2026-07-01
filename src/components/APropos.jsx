@@ -1,5 +1,5 @@
 import { CheckIcon } from '@phosphor-icons/react'
-import benoitPhoto from '../assets/att.k6MAV-1JtAZj3Y8Fbr6GnpOJ6am13otY_GG-tLcliWo (1).jpg'
+import benoitPhoto from '../assets/logo_2.jpg'
 import './APropos.css'
 
 const qualities = [

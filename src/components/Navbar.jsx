@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
-        <a href="#hero" className="navbar__logo">
+        <a href="#accueil" className="navbar__logo">
           <img src={logo} alt="Petit coup de pouce 05" />
         </a>
 

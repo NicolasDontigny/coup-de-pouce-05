@@ -1,9 +1,11 @@
 import { WrenchIcon, ScissorsIcon, TreeIcon, PaintBrushIcon, HouseIcon, LightningIcon, ChatsIcon } from '@phosphor-icons/react'
-import imgCabanon from '../assets/Cabanon.jpg'
-import imgCoupe from '../assets/coupe.webp'
+import imgParquet from '../assets/parquet.jpg'
+import imgAbri from '../assets/abri.jpg'
+import imgCoupe from '../assets/coupe.jpg'
 import imgHache from '../assets/hache.jpg'
 import imgPeinture from '../assets/Peinture_2.jpg'
-import imgBibliotheque from '../assets/bibliotheque.webp'
+import imgCuisine from '../assets/cuisine.jpg'
+import imgChambre from '../assets/chambre.jpg'
 import './Services.css'
 
 const services = [
@@ -11,7 +13,7 @@ const services = [
     id: 'petits-travaux',
     title: 'Petits travaux',
     desc: "Intérieur et extérieur — bricolage, fixations, petites réparations du quotidien.",
-    img: imgCabanon,
+    img: imgAbri,
     Icon: WrenchIcon,
   },
   {
@@ -26,6 +28,7 @@ const services = [
     title: 'Coupe & bois',
     desc: "Coupe, fendage et rangement de bois de chauffage.",
     img: imgHache,
+    imgClass: 'fill',
     Icon: TreeIcon,
   },
   {
@@ -39,21 +42,21 @@ const services = [
     id: 'amenagement',
     title: 'Aménagement intérieur',
     desc: "Construction de rangements, montage, petites rénovations.",
-    img: imgBibliotheque,
+    img: imgCuisine,
     Icon: HouseIcon,
   },
   {
     id: 'depannage',
     title: 'Dépannage',
     desc: "Intervention rapide pour toute panne ou urgence.",
-    img: '/images/service-depannage.jpg',
+    img: imgParquet,
     Icon: LightningIcon,
   },
   {
     id: 'conseils',
     title: 'Conseils',
     desc: "Accompagnement pour vos projets de travaux et d'aménagement.",
-    img: '/images/service-conseils.jpg',
+    img: imgChambre,
     Icon: ChatsIcon,
   },
 ]
@@ -68,6 +71,7 @@ function ServiceCard({ service, isLast }) {
           <img
             src={service.img}
             alt={service.title}
+            className={service.imgClass}
             loading="lazy"
             decoding="async"
             onError={e => {
@@ -106,8 +110,8 @@ export default function Services() {
         </div>
 
         <div className="services__grid">
-          {services.map((s, i) => (
-            <ServiceCard key={s.id} service={s} isLast={i === services.length - 1} />
+          {services.map((service, index) => (
+            <ServiceCard key={service.id} service={service} isLast={index === services.length - 1} />
           ))}
         </div>
       </div>
