@@ -1,21 +1,23 @@
 import GrainOverlay from './GrainOverlay'
-import imgCuisine from '../assets/Cuisine.jpg'
-import imgChambre from '../assets/Chambre.jpg'
-import imgParquet from '../assets/Parquet.jpg'
-import imgLasure from '../assets/Lasure.jpg'
-import imgPeinture from '../assets/Peinture.jpg'
-import imgCabanon from '../assets/Cabanon.jpg'
+import imgCuisine from '../assets/cuisine.jpg'
+import imgChambre from '../assets/chambre.jpg'
+import imgParquet from '../assets/parquet.jpg'
+import imgLasure from '../assets/lasure.jpg'
+import imgPeinture from '../assets/peinture.jpg'
+import imgCabanon from '../assets/cabanon.jpg'
 import imgBibliotheque from '../assets/bibliotheque.webp'
+import imgAbri from '../assets/abri.jpg'
 import './Realisations.css'
 
 const photos = [
-  { src: imgCuisine, alt: 'Réalisation cuisine rénovée' },
-  { src: imgChambre, alt: 'Réalisation aménagement intérieur' },
-  { src: imgBibliotheque, alt: 'Réalisation bibliothèque sur mesure' },
   { src: imgLasure, alt: 'Réalisation lasure et finitions' },
+  { src: imgCuisine, alt: 'Réalisation cuisine rénovée' },
+  { src: imgParquet, alt: 'Réalisation parquet' },
+  { src: imgChambre, alt: 'Réalisation aménagement intérieur' },
   { src: imgPeinture, alt: 'Réalisation peinture' },
   { src: imgCabanon, alt: 'Réalisation abri de jardin' },
-  { src: imgParquet, alt: 'Réalisation parquet' },
+  { src: imgBibliotheque, alt: 'Réalisation bibliothèque sur mesure' },
+  { src: imgAbri, alt: 'Réalisation abri pour bois' },
 ]
 
 export default function Realisations() {
